@@ -3,14 +3,15 @@ import {
   BrowserRouter as Router,
 } from "react-router-dom";
 import Header from './components/Header'
+import Contents from './components/Contents'
 
 
 function App() {
   return (
     <Router>
       <div>
-        <h1>Liner</h1>
-        <Header></Header>
+        <Header />
+        <Contents />
       </div>
     </Router>
   );
