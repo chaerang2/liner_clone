@@ -6,7 +6,7 @@ import {
 import Header from "./components/Header"
 import RightMenu from "./components/RightMenu"
 import LeftMenu from './components/LeftMenu'
-import Contents from './components/Contents'
+import ContentsList from './components/ContentsList'
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <Router>
       <div>
         <Header />
-        <Contents />
+        <ContentsList />
         <RightMenu />
         <LeftMenu />
       </div>
