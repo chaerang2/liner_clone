@@ -6,7 +6,7 @@ import {
 function Header(){
   return(
     <>
-      <Link to="/">로고</Link>
+      <Link to="/home">로고</Link>
       <input placeholder="Search on LINER"></input>
       <span>검색</span>
       <button>종</button>

@@ -1,5 +1,6 @@
 import React from "react";
 import FakeList from "./FakeList";
+import RightMenu from "./RightMenu"
 
 function Detail({match}){
   const id = match.params.id.slice(1);
@@ -27,6 +28,7 @@ function Detail({match}){
       <p>{description}</p>
       <p>Authors</p>
       <p>{authors}</p>
+      <RightMenu />
     </>
   )
 }
