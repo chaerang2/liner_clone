@@ -3,8 +3,8 @@ import FakeList from "./FakeList";
 import ContentsListEntry from "./ContentsListEntry";
 
 function ContentsList(){
-  const foryou = FakeList.foryou;
-  const list = foryou.map(ele=>{
+  const pageList = FakeList.pageList;
+  const list = pageList.map(ele=>{
     return <ContentsListEntry key={ele.id} content={ele} />
   })
   return(

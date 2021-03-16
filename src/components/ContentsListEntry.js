@@ -1,11 +1,14 @@
 import React from "react";
+import {
+  Link
+} from "react-router-dom";
 
 function ContentsListEntry({content}){
-  const {title, liner_HL, thumnail, webimg, url, tag} = content
+  const {title, liner_HL, thumnail, webimg, url, tag, id} = content
   return(
     <div>
       {tag && <div>{tag.map(tag=><span key={tag.id}>{tag.tag}</span>)}</div>}
-      <p>{title}</p>
+      <Link to={`/detail/:${id}`}>{title}</Link>
       <p>{liner_HL}</p>
       <img src={thumnail} alt="thumnail"></img>
       <img src={webimg} alt="webimg"></img>
