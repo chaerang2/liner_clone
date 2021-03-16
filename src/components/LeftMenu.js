@@ -7,7 +7,7 @@ function LeftMenu(){
   return(
     <>
       <ul>
-        <li><Link to='/'>For You</Link></li>
+        <li><Link to='/home'>For You</Link></li>
         <li><Link to='/myhighlights'>My Highlights</Link></li>
         <li><Link to='/more'>More</Link></li>
       </ul>
