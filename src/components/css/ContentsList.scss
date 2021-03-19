@@ -1,0 +1,125 @@
+@import 'useScss.scss';
+.contents_container{
+  width: 712px;
+  float: left;
+}
+.menu_name{
+  @include fontstyle($font-size:32px,$font-weight:700,$color: #272b31);
+  width: 681px;
+  height: 40px;
+  display: inline-block;
+}
+.menu_info{
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  margin: 5px 0 0 -545px;
+  background-image: url(./img/info.svg);
+}
+.hl_info{
+  margin-left: -440px;
+}
+.languages_btn{
+  @include fontstyle($font-size: 14px,$le-spacing:-0.35px,$color: $font-main-grey);
+  position: absolute;
+  margin-left: -110px;
+  margin-top: 15px;
+}
+.short_info{
+  @include fontstyle($font-size: 14px,$font-weight:500,$le-spacing:-0.35px,$color: $font-main-grey);
+  margin: 25px 0;
+}
+.count_save{
+  @include fontstyle($font-size: 14px,$color: $font-main-grey);
+  margin: 25px 0;
+}
+.hl_btns{
+  position: relative;
+  height: 40px;
+}
+.hl_menu{
+  @include fontstyle($font-size: 14px,$font-weight:700,$le-spacing:-0.35px,$color: $font-sub-grey);
+  float: left;
+  width: 104px;
+  height: 40px;
+  border-radius: 7px;
+}
+.focus_hl{
+  background-color: #eef1f4;
+  color: #52565d;
+}
+.hl_right_btn{
+  position: relative;
+  float: left;
+  left: 330px;
+}
+.hl_right_btn button{
+  float: left;
+}
+.pages_btn{
+  @include fontstyle($font-size:14px, $font-weight:400,$le-spacing:-0.35px, $color: $font-main-grey);
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.filter_btn{
+  width: 32px;
+  height: 32px;
+  background-image: url(./img/filter-header.svg);
+}
+.search_btn{
+  width: 32px;
+  height: 32px;
+  background-image: url(./img/search-header.svg);
+}
+
+.dropmenu {
+  @include fontstyle($font-size:14px, $le-spacing:-0.35px,$color: #52565d);
+  background: #ffffff;
+  border-radius: 7px;
+  position: absolute;
+  top: 150px;
+  right: 670px;
+  width: 200px;
+  height: 294px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 99;
+}
+
+.dropmenu.active {
+  opacity: 1;
+  visibility: visible;
+}
+.dropmenu_header{
+  font-weight: 700;
+  color: #969aa2;
+  height: 40px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.dropmenu li{
+  font-weight: 400;
+  display: block;
+  padding-left: 20px;
+  height: 40px;
+  line-height: 40px;
+}
+.dropmenu li:hover{
+  background-color: #f6f8fa;
+}
+.focusLan{
+  color: #00bdb8;
+  font-weight: 500;
+}
+.dropmenu.more{
+  top: 30px;
+  right: -120px;
+  width: 203px;
+  height: 138px;
+  padding-top: 10px;
+}
+.dropmenu img{
+  vertical-align: middle;
+}

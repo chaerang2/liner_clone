@@ -1,0 +1,71 @@
+@import 'useScss.scss';
+.header_wrap{
+  height: 64px;
+}
+.HeaderContainer{
+  width: 1280px;
+  height: 64px;
+  position: fixed;
+  background-color: #fff;
+  z-index: 9;
+}
+.logo{
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  margin-top: 16px;
+  background-image: url(./img/liner-logo.svg);
+}
+.search_bar{
+  width: 670px;
+  height: 40px;
+  position: absolute;
+  left: 250px;
+  top: 50%;
+  padding: 10px 54px 11px 15px;
+  margin-top: -20px;
+  border-width: 0;
+  border-radius: 7px;
+  font-size: 16px;
+  background-color: #eef1f4;
+}
+.search_bar::placeholder{
+  color: #333;
+  opacity: 0.2;
+}
+.search{
+  width: 32px;
+  height: 32px;
+  position: relative;
+  display: inline-block;
+  left: 850px;
+  background-image: url(./img/search.svg);
+}
+.header_btn{
+  position: relative;
+  display: inline-block;
+  left: 1070px;
+}
+.noti{
+  width: 32px;
+  height: 32px;
+  background-image: url(./img/noti.svg);
+}
+.plus_pdf{
+  @include fontstyle($font-size:14px);
+  width: 85px;
+  height: 40px;
+  position: absolute;
+  left: 60px;
+  margin-top: -2px;
+  border: 1px solid rgba(129, 129, 129, 0.3);
+  border-radius: 7px;
+}
+.plus_pdf:hover{
+  background-color: #f6f8fa;
+}
+.bg_center_norepeat{
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}

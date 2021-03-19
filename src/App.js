@@ -10,6 +10,7 @@ import Header from "./components/Header"
 import LeftMenu from './components/LeftMenu'
 import ContentsList from './components/ContentsList'
 import Detail from './components/Detail'
+import "./App.scss"
 
 
 function App() {
@@ -19,19 +20,21 @@ function App() {
   },[]);
   return (
     <Router>
-      <div>
+      <div className="container">
         <Header />
-        <Route
-           exact path="/"
-           render={() => <ContentsList rout="home" />}/>
-        <Route
-           path='/home'
-           render={() => <ContentsList rout="home" />}/>
-        <Route
-           path='/myhighlights'
-           render={() => <ContentsList rout="myhighlights" />}/>
         <LeftMenu />
-        <Route path="/Detail/:id" component={Detail} />
+        <div className="page_right">
+          <Route
+            exact path="/"
+            render={() => <ContentsList rout="home" />}/>
+          <Route
+            path='/home'
+            render={() => <ContentsList rout="home" />}/>
+          <Route
+            path='/myhighlights'
+            render={() => <ContentsList rout="myhighlights" />}/>
+          <Route path="/Detail/:id" component={Detail} />
+        </div>
       </div>
     </Router>
   );
