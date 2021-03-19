@@ -1,0 +1,32 @@
+@import 'useScss.scss';
+.left_menu{
+  margin-top: 50px;
+  position: fixed;
+  width: 216px;
+  font-family: $main-en-font;
+}
+.left_menu li{
+  height: 50px;
+}
+.left_tab{
+  color: #999;
+}
+.select_page{
+  color: #00bdb8;
+  font-weight: 800;
+}
+.select_page a{
+  color: #00bdb8;
+}
+.upgrade{
+  @include fontstyle($font-weight:700,$color:$main-color);
+  width: 200px;
+  height: 40px;
+  border: 1px solid #00bdb8;
+  border-radius: 7px;
+}
+.upgrade:hover{
+  background-color: #00bdb8;
+  border: none;
+  color: #fff;
+}

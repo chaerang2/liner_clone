@@ -1,0 +1,136 @@
+@import 'useScss.scss';
+
+.info_modal{
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  position: absolute;
+  width: 320px;
+  height: 280px;
+  top: 80px;
+  left: 740px;
+  background-color: #52565d;
+  z-index: 1;
+  border-radius: 7px;
+  background-image: url(./img/robot.JPG);
+  background-repeat: no-repeat;
+  background-position: 45px 30px;
+}
+.diamond{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 35px;
+  left: -10px;
+  background-color: #52565d;
+  transform: rotate(45deg);
+}
+.closemodal{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url(./img/close-be-comment.svg);
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.modal_textbox{
+  position: relative;
+  top: 150px;
+  padding: 15px;
+}
+.modal_menutitle{
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.modal_menuinfo{
+  font-size: 14px;
+  font-weight: 400;
+}
+.hl_modal{
+  left: 850px;
+  background-image: url(./img/highlight.JPG);
+  background-position: 40px 20px;
+}
+
+.share_modal_container{
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 9999;
+}
+.share_modal{
+  position: absolute;
+  width: 480px;
+  height: 208px;
+  left: 50%; top: 50%;
+  transform:translate(-50%,-50%);
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  letter-spacing: -0.35px;
+}
+.share_modal h1{
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+}
+.closemodal.share{
+  width: 32px;
+  height: 32px;
+  background-image: url(./img/close-light.svg);
+}
+.share_sns_btn_box{
+  width: 410px;
+  padding: 25px 0;
+  border-bottom: 1px solid #eee;
+}
+.share_sns_btn{
+  width: 36px;
+  height: 36px;
+  margin-right: 15px;
+}
+.copy_url{
+  width: 335px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  color: #555;
+  border: none;
+  font-size: 14px;
+}
+.copy_btn{
+  @include fontstyle($font-size:14px,$font-weight:700,$color:$main-color);
+  position: relative;
+  width: 60px;
+  height: 34px;
+  top: 8px;
+  left: 30px;
+  border-radius: 7px;
+}
+.copy_btn:hover{
+  background-color: #e5f8f7;
+}
+.share_fb{
+  background-image: url(./img/facebook.svg);
+}
+.share_tw{
+  background-image: url(./img/twitter.svg);
+}
+.share_in{
+  background-image: url(./img/linkdin.svg);
+}
+.share_fm{
+  background-image: url(./img/messenger.svg);
+}
+.share_li{
+  background-image: url(./img/line.svg);
+}
+.share_ma{
+  background-image: url(./img/mail.svg);
+}
+.share_more{
+  background-image: url(./img/sns-more.svg);
+}

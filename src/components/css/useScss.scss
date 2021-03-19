@@ -1,0 +1,15 @@
+
+$main-color: #00bdb8;
+$font-main-grey: #787d86;
+$font-sub-grey: #969aa2;
+$main-en-font:'Montserrat', sans-serif;
+@mixin fontstyle($font-size:16px, $font-weight:normal,$le-spacing:0,$color:#000) {
+  font-family: 'Montserrat', sans-serif;
+  font-size:$font-size;
+  font-weight:$font-weight;
+  letter-spacing:$le-spacing;
+  color:$color;
+};
+
+
+
