@@ -70,7 +70,7 @@
   color: #555;
 }
 .detail_more_like{
-  @include fontstyle($font-size:21px,$le-spacing: -0.35px);
+  @include fontstyle($font-size:21px,$font-weight:bold,$le-spacing: -0.35px);
   border-bottom: 1px solid rgb(238, 241, 244);
   padding: 15px 0;
 }
