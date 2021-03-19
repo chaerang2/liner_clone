@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# 라이너 프론트엔드 사전과제(차채윤)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+안녕하세요 라이너 프론트엔드 지원자 차채윤입니다.
 
-## Available Scripts
 
-In the project directory, you can run:
+### `Header`
 
-### `npm start`
+버튼과 검색창 배치를 위해서 일반적인 p,span,input 태그를 이용하였습니다.
+작동은 하지 않아도 된다는 안내를 보고 간단하게 로고 클릭 시 /home으로 갈 수 있는 라우팅만 해두었습니다.
+스크롤을 내려도 메뉴가 고정될 수 있게 fixed로 고정시켜둔 채 css작업을 했습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `좌측메뉴`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+좌측메뉴는 탭 3개와 upgrade부분으로 간단하게 나누어져 있었습니다.
+메뉴는 ul,li등의 리스트태그를 업그레이드부분은 버튼으로 구현하였습니다.
+현재 url을 인식해서 하는 방법이 없을까 찾아보다가 우선 선택한 메뉴에 메인 컬러가 들어가게끔 useState를 사용하였습니다.
 
-### `npm test`
+### `우측메뉴`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+우측메뉴는 인기태그와 페이지로 이루어져있었습니다.
+인기 메뉴는 그 때 그 때 달라지는 데이터이므로 서버에서 받아올 것이라고 생각하여 서버에서 주는 데이터라고 상상하며 가상데이터를 만든 후 매핑해주었습니다.
+5개를 기본적으로 노출 시키고 showmore버튼으로 추가적으로 노출될 수 있도록 하고싶었으나 아직 방법을 찾지 못했습니다.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `For You탭`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+이것 또한 서버에서 받아오는 데이터라고 파악하여 가상데이터를 만들었습니다.
+그 다음 게시물 한개를 구현해주는 entry컴포넌트와 목록을 구현하는 list컴포넌트를 만들어 가상데이터를 entry컴포넌트에 props로 내려주었습니다.
+게시물마다 태그 유무가 달라 태그매핑은 조건부렌더링으로 구현했습니다.
+또한 for you와 highlight가 보여주는 구성이 다르기 때문에 버튼 구현도 조건부렌더링으로 진행했습니다.
+모달창은 이전에 사용해보았던 방법인 useState와 새로운 컴포넌트를 만들어 구현하는 방식을 사용했습니다.
+게시물의 제목을 누르면 해당 게시글 detail페이지로 넘어가기 때문에 
+```js
+ <Link to={`/detail/:${id}`} className="content_title">{title}</Link>
+ //ContentsListEntry.js
+ <Route path="/Detail/:id" component={Detail} />
+ //App.js
+```
+id로 라우팅을 해서 detail컴포넌트를 구현해주었습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `My Highlight탭`
 
-### `npm run eject`
+highlight페이지는 foryou탭과 유사하게 구현하였습니다. 같은 데이터를 매핑해주었고 버튼 배치와 구성에서 다른점을 조건부 렌더링으로 구현하였습니다.
+탭 정보 이외의 모달과 드롭다운 메뉴는 아직 구현하지 못하였습니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `Detail Page`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+match로 파라미터를 받아왔고, FakeList에서 id가 일치하는 데이터를 뽑아서 리턴값에 지정해주었습니다.
+for문 작업은 fakedata를 썼기 때문에 사용하였고, 만약 서버와 통신한다면 id를 보내주고 서버에서 걸러낸 데이터를 보내주면 그걸 리턴값에 지정만 해주면 된다 생각합니다.
+받아온 데이터를 태그에 맞게 배치만 하였습니다. 
+detail페이지 또한 view original버튼 이외에는 작동이 되지 않습니다.
+우측 메뉴는 foryou메뉴 목록을 제외하면 people also read메뉴가 보이게 되는데 props를 수동으로 내려주어 조건부 렌더링을 하였습니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### `구현하지 못한 기능들`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- For you, My highlight 목록에서 스크롤 시 상단 메뉴 고정
+- 드롭다운 메뉴 바깥 클릭 시 드롭다운 메뉴 꺼지지 않음
+- My hightlight 의 pages드롭다운버튼, 필터, 검색, 공유, 더보기
+- 게시물 일정 갯수만 렌더 되고 스크롤이 내려가야 추가 로딩 되는 기능
+- detail page에서 스크롤 시 상단메뉴 고정
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
